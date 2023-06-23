@@ -11,11 +11,11 @@ public class Driver {
         System.out.println("Value popped: " + stack.pop());
 
         System.out.println("Testing LinkedStack");
-        LinkedStack<String> stack1 = new LinkedStack<>();
-        stack1.push("Hello");
-        System.out.println("Value added: Hello");
-        stack1.push("World");
-        System.out.println("Value added: World");
+        LinkedStack<Integer> stack1 = new LinkedStack<>();
+        stack1.push(1);
+        System.out.println("Value added: 1");
+        stack1.push(2);
+        System.out.println("Value added: 2");
         System.out.println("Value popped: " + stack1.pop());
         System.out.println("Value popped: " + stack1.pop());
 
@@ -29,11 +29,11 @@ public class Driver {
         System.out.println("Value dequeued: " + queue.dequeue());
 
         System.out.println("Testing LinkedQueue");
-        LinkedQueue<String> queue1 = new LinkedQueue<>();
-        queue1.enqueue("Hello");
-        System.out.println("Value added: Hello");
-        queue1.enqueue("World");
-        System.out.println("Value added: World");
+        LinkedQueue<Integer> queue1 = new LinkedQueue<>();
+        queue1.enqueue(1);
+        System.out.println("Value added: 1");
+        queue1.enqueue(2);
+        System.out.println("Value added: 2");
         System.out.println("Value dequeued: " + queue1.dequeue());
         System.out.println("Value dequeued: " + queue1.dequeue());
 
