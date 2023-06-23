@@ -1,8 +1,8 @@
-public class LinkedStackOfStrings {
+public class LinkedStack<T> {
     private Node head = null;
 
     private class Node {
-        String item;
+        T item;
         Node next;
     }
 
@@ -10,15 +10,15 @@ public class LinkedStackOfStrings {
         return head == null;
     }
 
-    public void push(String item) {
+    public void push(T item) {
         Node old = head;
         head = new Node();
         head.item = item;
         head.next = old;
     }
 
-    public String pop() {
-        String item = head.item;
+    public T pop() {
+        T item = head.item;
         head = head.next;
         return item;
     }
