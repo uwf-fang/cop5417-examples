@@ -98,6 +98,22 @@ public class IntSortingAlgorithms {
     }
 
     /**
+     * Bottom-up merge sort algorithm
+     */
+    public static void bottomUpMergeSort(int[] arr) {
+        int n = arr.length;
+
+        for (int currSize = 1; currSize < n; currSize = 2 * currSize) {
+            for (int leftStart = 0; leftStart < n - 1; leftStart += 2 * currSize) {
+                int mid = Math.min(leftStart + currSize - 1, n - 1);
+                int rightEnd = Math.min(leftStart + 2 * currSize - 1, n - 1);
+
+                merge(arr, leftStart, mid, rightEnd);
+            }
+        }
+    }
+
+    /**
      * Quick sort algorithm
      */
     public static void quickSort(int[] arr) {

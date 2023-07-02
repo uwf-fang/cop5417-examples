@@ -21,6 +21,11 @@ public class Main {
 
         arr = new int[] { 5, 3, 8, 1, 2 }; // Reset the array
 
+        IntSortingAlgorithms.bottomUpMergeSort(arr);
+        System.out.println("Sorted using Bottom-Up Merge Sort: " + Arrays.toString(arr));
+
+        arr = new int[] { 5, 3, 8, 1, 2 }; // Reset the array
+
         IntSortingAlgorithms.quickSort(arr);
         System.out.println("Sorted using Quick Sort: " + Arrays.toString(arr));
     }
