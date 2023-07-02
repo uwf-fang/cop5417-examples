@@ -118,7 +118,7 @@ public class IntSortingAlgorithms {
     /**
      * Quick sort helper method to partition the array
      * and return the pivot index
-     * Lumuto's partition scheme
+     * Lomuto's partition scheme
      * last element as pivot
      */
     private static int partition(int[] arr, int low, int high) {
