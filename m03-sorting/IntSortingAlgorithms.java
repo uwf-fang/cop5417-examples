@@ -55,7 +55,8 @@ public class IntSortingAlgorithms {
 
     /**
      * Merge sort helper method to merge two sorted arrays
-     * This method duplicates left and right sections to temporary arrays first * and then merges them to the original array section.
+     * This method duplicates left and right sections to temporary arrays first *
+     * and then merges them to the original array section.
      */
     private static void merge(int[] arr, int low, int mid, int high) {
         int n1 = mid - low + 1;
@@ -142,28 +143,28 @@ public class IntSortingAlgorithms {
      * Hoare's partitioning scheme
      * first element as pivot
      */
-  private static int partition(int[] arr, int low, int high) {
-    int pivot = arr[low];
-    int i = low - 1;
-    int j = high + 1;
+    private static int partition(int[] arr, int low, int high) {
+        int pivot = arr[low];
+        int i = low - 1;
+        int j = high + 1;
 
-    while (true) {
-      do {
-        i++;
-      } while (arr[i] < pivot);
+        while (true) {
+            do {
+                i++;
+            } while (arr[i] < pivot);
 
-      do {
-        j--;
-      } while (arr[j] > pivot);
+            do {
+                j--;
+            } while (arr[j] > pivot);
 
-      if (i >= j) {
-        return j;
-      }
+            if (i >= j) {
+                return j;
+            }
 
-      int temp = arr[i];
-      arr[i] = arr[j];
-      arr[j] = temp;
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
     }
-  }
 
 }
