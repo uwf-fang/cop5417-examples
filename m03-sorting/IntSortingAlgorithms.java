@@ -55,6 +55,7 @@ public class IntSortingAlgorithms {
 
     /**
      * Merge sort helper method to merge two sorted arrays
+     * This method duplicates left and right sections to temporary arrays first * and then merges them to the original array section.
      */
     private static void merge(int[] arr, int low, int mid, int high) {
         int n1 = mid - low + 1;
@@ -99,6 +100,10 @@ public class IntSortingAlgorithms {
 
     /**
      * Bottom-up merge sort algorithm
+     * This method iteratively sorts the array by merging subarrays of size 1, &
+     * 2, 4, 8, etc.
+     * It is easier to implement than the recursive merge sort. It is also more
+     * friendly to parallel processing.
      */
     public static void bottomUpMergeSort(int[] arr) {
         int n = arr.length;
@@ -126,7 +131,7 @@ public class IntSortingAlgorithms {
     private static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
             int pivotIndex = partition(arr, low, high);
-            quickSort(arr, low, pivotIndex - 1);
+            quickSort(arr, low, pivotIndex);
             quickSort(arr, pivotIndex + 1, high);
         }
     }
@@ -134,24 +139,31 @@ public class IntSortingAlgorithms {
     /**
      * Quick sort helper method to partition the array
      * and return the pivot index
-     * Lomuto's partition scheme
-     * last element as pivot
+     * Hoare's partitioning scheme
+     * first element as pivot
      */
-    private static int partition(int[] arr, int low, int high) {
-        int pivot = arr[high];
-        int i = low - 1;
-        for (int j = low; j < high; j++) {
-            if (arr[j] < pivot) {
-                i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[high];
-        arr[high] = temp;
-        return i + 1;
+  private static int partition(int[] arr, int low, int high) {
+    int pivot = arr[low];
+    int i = low - 1;
+    int j = high + 1;
+
+    while (true) {
+      do {
+        i++;
+      } while (arr[i] < pivot);
+
+      do {
+        j--;
+      } while (arr[j] > pivot);
+
+      if (i >= j) {
+        return j;
+      }
+
+      int temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
     }
+  }
 
 }
