@@ -8,6 +8,9 @@ public class DijkstraShortestPath {
         // Private constructor to prevent instantiation of this utility class
     }
 
+    // Computes the shortest path from the source vertex to all other vertices
+    // in the graph
+    // Returns values by modifying the distTo and parent arrays
     public static void shortestPath(WeightedDigraph graph, int source, int[] distTo, int[] parent) {
         int V = graph.V();
         Arrays.fill(distTo, Integer.MAX_VALUE);
@@ -38,6 +41,7 @@ public class DijkstraShortestPath {
         }
     }
 
+    // Computes the shortest path from the source vertex to all other vertices
     public static int[] getDistances(WeightedDigraph graph, int source) {
         int V = graph.V();
         int[] distTo = new int[V];
@@ -46,6 +50,8 @@ public class DijkstraShortestPath {
         return distTo;
     }
 
+    // Computes the shortest path from the source vertex to the destination
+    // vertex
     public static List<Integer> getPath(WeightedDigraph graph, int source, int destination) {
         int V = graph.V();
         int[] distTo = new int[V];
@@ -59,6 +65,8 @@ public class DijkstraShortestPath {
         return path;
     }
 
+    // Nested class to represent a node in the priority queue
+    // It implements Comparable so that we can use it in a PriorityQueue
     private static class Node implements Comparable<Node> {
         private int vertex;
         private int distance;

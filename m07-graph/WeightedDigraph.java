@@ -63,6 +63,7 @@ public class WeightedDigraph {
     }
 
     // Nested class to represent a weighted edge
+    // It implements Comparable so that we can use it in a TreeSet
     public static class WeightedEdge implements Comparable<WeightedEdge> {
         private int target;
         private int weight;
