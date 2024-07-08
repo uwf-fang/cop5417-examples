@@ -1,3 +1,13 @@
+/**
+ * The algorithms covered here are for extended reading only:
+ *
+ *   They are correct but is different from the example provided in the
+ *   textbook.
+ *
+ * The textbook example is always the only reference when we discuss algorithms
+ * in homework or exams.
+ */
+
 public class IntSortingAlgorithms {
 
     /**
