@@ -10,9 +10,10 @@ public class TypeTest {
         System.out.println(array1 == array3); // true, same memory address
 
         array1[0] = 10; // Modifying the array through array1
+        System.out.println(array1[0]); // 10, since array1 was modified
         System.out.println(array3[0]); // 10, since array3 points to the same memory location
 
-        modifyArray(array2);
+        modifyArray(array2);  // Parameter passing, array2 is passed by reference
         System.out.println(array2[0]); // 100, since the method modified the array
 
         System.out.println(array1 == array2); // false, modified array2 but not array1

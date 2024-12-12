@@ -7,6 +7,6 @@ public class Circle implements Drawable {
 
   public void draw() {
     System.out.println("Drawing a circle with radius " + radius);
-    // Draw the circle
+    System.out.println("Not implemented yet");
   }
 }
